@@ -1,0 +1,133 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+}
+
+body {
+  background: #ecc0f1;
+}
+
+nav {
+  background: #ecc0f1;
+  width: 100%;
+  padding: 15px;
+  box-shadow: -3px -3px 7px #ffffff,
+              3px 3px 5px #aa62aa;
+}
+
+nav .menu {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 1250px;
+  margin: auto;
+  padding: 0 20px;
+}
+
+.menu .logo a {
+  font-size: 30px;
+  font-weight: 600;
+  text-decoration: none;
+  color: #31344b;
+}
+
+.menu ul {
+  display: flex;
+  list-style: none;
+}
+
+.menu ul a {
+  text-decoration: none;
+  margin: 10px;
+  padding: 10px 18px;
+  box-shadow: -3px -3px 7px #f9e0fd,
+              3px 3px 5px #aa62aa;
+  color: #31344b;
+  font-weight: 400;
+  font-size:  18px;
+  display: inline-block;
+  position: relative;
+  transition: all 0.2s ease;
+}
+
+.menu ul a:hover:before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  box-shadow: inset -3px -3px 7px #f9e0fd,
+              inset 3px 3px 5px #aa62aa;
+}
+
+.menu ul a:hover {
+  color: #d318e4;
+}
+
+.btn {
+  color: #31344b;
+  font-size: 20px;
+  cursor: pointer;
+  display: none;
+}
+
+.cancel {
+  position: absolute;
+  top: 25px;
+  right: 30px;
+}
+
+#check {
+  display: none;
+}
+
+@media (max-width:940px) {
+  .menu ul {
+    display: block;
+    position: fixed;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    max-width: 400px;
+    height: 100%;
+    background: #ecc0f1;
+    box-shadow: 0 5px 10px #aa62aa;
+    padding-top: 45px;
+    z-index: 12;
+    transition: all 0.8s ease;
+  }
+
+  .menu ul a {
+    box-shadow: none;
+    display: block;
+    text-align: center;
+    width: 100%;
+    font-size: 23px;
+    margin-top: 30px;
+  }
+
+  .menu ul a:hover:before {
+    box-shadow: none;
+  }
+
+  .hamburger {
+    display: block;
+  }
+
+  #check:checked ~ .hamburger {
+    display: none;
+  }
+
+  #check:checked ~ ul label.cancel {
+    display: block;
+  }
+
+  #check:checked ~ ul {
+    left: 0;
+  }
+}
